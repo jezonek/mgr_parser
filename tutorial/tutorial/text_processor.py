@@ -10,8 +10,13 @@ if __name__ == '__main__':
                 for line in song['text'].splitlines(True):
                     if re.match(r'^\s*\[.*\]', line) or re.match(r'^\s*\(.*\)', line) or re.match(r'^\s*$',
                                                                                                   line) or re.match(
-                            r'^(R|r)(E|e)(F|f)', line):
+                        r'^(R|r)(E|e)(F|f)', line):
                         continue
+                    # if re.search(r'\.$', line):
+                    #     output_file.write(line.lstrip()[:-2])
+                    #     continue
+                    #TODO needs fix
+
                     output_file.write(line.lstrip())
 
     except Exception as e:
